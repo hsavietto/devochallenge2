@@ -12,6 +12,16 @@ I opted for unordered pair (i.e. (1, 2) == (2, 1)). For this exercise it will av
 in the result since the operation (addition) is commutative. If the code should be changed to accepts
 different operations and those operations can be no commutative, it should be changed to use ordered pairs.
 
+* Build instructions
+
+At the root of the project directory, execute the command "mvn clean package". The executable jar will be
+created at the "target" directory.
+
+* Running the demo
+
+To run the demo, execute the command "java -jar <jar_file_name> at the directory where the generated jar
+file is.
+
 * Complexity analysis
 
 The time complexity of the main loop is O(n), because it relies on a map with the complementary positions

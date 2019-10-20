@@ -21,7 +21,7 @@ public class KComplementaryFinder {
 
         Map<Integer, List<Integer>> complementaryPositions = new HashMap<>();
 
-        for (int i = 0; i < values.length; i++) {
+        for (int i = 0; i < values.length; ++i) {
             int complementary = (int) (k - values[i]);
             complementaryPositions.merge(complementary, Collections.singletonList(i), (l, v) -> {
                 ArrayList<Integer> newList = new ArrayList<>(l);
@@ -30,7 +30,7 @@ public class KComplementaryFinder {
             });
         }
 
-        for (int i = 0; i < values.length; i++) {
+        for (int i = 0; i < values.length; ++i) {
             List<Integer> indexes = complementaryPositions.get(values[i]);
 
             if (indexes != null) {

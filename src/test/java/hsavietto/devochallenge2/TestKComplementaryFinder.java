@@ -60,7 +60,7 @@ public class TestKComplementaryFinder {
         long setupStart = System.nanoTime();
         int[] values = new int[testSize];
 
-        for (int i = 0; i < testSize; i++) {
+        for (int i = 0; i < testSize; ++i) {
             values[i] = i;
         }
 
