@@ -1,7 +1,5 @@
 package hsavietto.devochallenge2;
 
-import javafx.util.Pair;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,17 +9,17 @@ import java.util.Set;
 public class KComplementaryFinder {
 
     /**
-     * @param k the K value
+     * @param k      the K value
      * @param values array of values
      * @return a list of pairs
      */
-    public Set<Pair<Integer, Integer>> findKComplementaries(long k, int[] values) {
-        Set<Pair<Integer, Integer>> complementaries = new HashSet<>();
+    public Set<UnorderedIntPair> findKComplementaries(long k, int[] values) {
+        Set<UnorderedIntPair> complementaries = new HashSet<>();
 
-        for(int i = 0; i < values.length - 1; i++) {
-            for(int j = i + 1; j < values.length; j++) {
-                if(values[i] + values[j] == k) {
-                    complementaries.add(new Pair<>(i, j));
+        for (int i = 0; i < values.length - 1; i++) {
+            for (int j = i + 1; j < values.length; j++) {
+                if (values[i] + values[j] == k) {
+                    complementaries.add(new UnorderedIntPair(i, j));
                 }
             }
         }

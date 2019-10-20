@@ -1,6 +1,5 @@
 package hsavietto.devochallenge2;
 
-import javafx.util.Pair;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -15,7 +14,7 @@ public class TestKComplementaryFinder {
     public void testNoComplementaryFound() {
         int[] values = new int[]{3, 1, 4, 2, 5};
         KComplementaryFinder kFinder = new KComplementaryFinder();
-        Set<Pair<Integer, Integer>> result = kFinder.findKComplementaries(15, values);
+        Set<UnorderedIntPair> result = kFinder.findKComplementaries(15, values);
         Assert.assertTrue(result.isEmpty());
     }
 
@@ -23,18 +22,19 @@ public class TestKComplementaryFinder {
     public void testSingleComplementaryFound() {
         int[] values = new int[]{3, 1, 4, 2, 5};
         KComplementaryFinder kFinder = new KComplementaryFinder();
-        Set<Pair<Integer, Integer>> result = kFinder.findKComplementaries(9, values);
+        Set<UnorderedIntPair> result = kFinder.findKComplementaries(9, values);
         Assert.assertEquals(1, result.size());
-        Assert.assertTrue(result.contains(new Pair<>(2, 4)));
+        Assert.assertTrue(result.contains(new UnorderedIntPair(2, 4)));
+        Assert.assertTrue(result.contains(new UnorderedIntPair(4, 2)));
     }
 
     @Test
     public void testMultipleComplementaryFound() {
         int[] values = new int[]{3, 1, 4, 2, 5};
         KComplementaryFinder kFinder = new KComplementaryFinder();
-        Set<Pair<Integer, Integer>> result = kFinder.findKComplementaries(6, values);
+        Set<UnorderedIntPair> result = kFinder.findKComplementaries(6, values);
         Assert.assertEquals(2, result.size());
-        Assert.assertTrue(result.contains(new Pair<>(1, 4)));
-        Assert.assertTrue(result.contains(new Pair<>(2, 3)));
+        Assert.assertTrue(result.contains(new UnorderedIntPair(1, 4)));
+        Assert.assertTrue(result.contains(new UnorderedIntPair(2, 3)));
     }
 }
