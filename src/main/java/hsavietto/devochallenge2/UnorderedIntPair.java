@@ -41,7 +41,8 @@ public class UnorderedIntPair {
 
     @Override
     public int hashCode() {
-        return lesserValue * 13 + greaterValue;
+        // using an arbitrary "big" prime number to avoid collisions up to 10,000 and reducing it above this threshold
+        return lesserValue * 10007 + greaterValue;
     }
 
     @Override
